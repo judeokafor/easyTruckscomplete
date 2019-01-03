@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MaterializeModule } from "angular2-materialize";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,9 @@ import { IndexpageComponent } from './components/indexpage/indexpage.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { QuotesComponent } from './components/quotes/quotes.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +24,15 @@ import { QuotesComponent } from './components/quotes/quotes.component';
     IndexpageComponent,
     LoginComponent,
     RegisterComponent,
-    QuotesComponent
+    QuotesComponent,
+    DashboardComponent,
+    ProfileComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterializeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
