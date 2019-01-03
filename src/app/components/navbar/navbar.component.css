@@ -1,0 +1,10 @@
+.main-header{
+    background: url(../../../assets/images/newbackground.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 600px;
+    color: whitesmoke;
+}
+.main-header .showcase {
+    padding-top: 100px;
+}
