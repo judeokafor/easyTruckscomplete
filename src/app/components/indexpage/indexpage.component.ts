@@ -11,5 +11,4 @@ export class IndexpageComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

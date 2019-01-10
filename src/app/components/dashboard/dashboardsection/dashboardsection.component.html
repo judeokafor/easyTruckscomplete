@@ -1,0 +1,416 @@
+<section class="section section-stats center">
+  <div class="row">
+    <div class="col s12 m6 l3">
+      <div class="card-panel blue-grey darken-3 white-text center">
+        <i class="material-icons medium">insert_emoticon</i>
+        <h5>Monthly Visitors</h5>
+        <h3 class="count">38300</h3>
+        <div class="progress grey darken-4">
+          <div class="determinate pink lighten-3" style="width: 40%;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m6 l3">
+      <div class="card-panel light-green lighten-1 black-text center">
+        <i class="material-icons medium">supervisor_account</i>
+        <h5>Users</h5>
+        <h3 class="count">1550</h3>
+        <div class="progress grey lighten-3">
+          <div class="determinate black-text" style="width: 55%;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m6 l3">
+      <div class="card-panel blue-grey darken-4 white-text center">
+        <i class="material-icons medium">mode_edit</i>
+        <h5>No of Trips</h5>
+        <h3 class="count">5565</h3>
+        <div class="progress grey darken-3">
+          <div class="determinate pink lighten-4" style="width: 20%;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m6 l3">
+      <div class="card-panel light-green lighten-2 black-text center">
+        <i class="material-icons medium">mode_comment</i>
+        <h5>Comments</h5>
+        <h3 class="count">2950</h3>
+        <div class="progress grey lighten-2">
+          <div class="determinate black-text" style="width: 25%;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- visitors section -->
+<section class="section section-visitors pink lighten-5">
+  <div class="row">
+    <div class="col s12 m6 l8">
+      <div class="card-panel">
+        <div id="chartContainer" style="height: 300px; width: 100%; "></div>
+      </div>
+    </div>
+    <!-- comments section -->
+    <div class="col s12 m6 l4">
+      <ul class="collection with-header latest-comments">
+        <li class="collection-header"><h5>Latest Comments</h5></li>
+        <li class="collection-item avatar">
+          <img
+            src="../../../../assets/images/transportation-1495618_1920.jpg"
+            alt=""
+            class="circle"
+          />
+          <span class="title">Jason Jackson</span>
+          <p class="truncate">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam
+            animi atque laborum, sunt facere nemo accusantium quo saepe incidunt
+            officiis magnam recusandae veritatis reprehenderit placeat quia quas
+            voluptas tenetur libero.
+          </p>
+          <a href="#" class="approve green-text">Approve</a> |
+          <a href="#" class="deny red-text">Deny</a>
+        </li>
+        <li class="collection-item avatar">
+          <img
+            src="../../../../assets/images/person.jpg"
+            alt=""
+            class="circle"
+          />
+          <span class="title">Sam William</span>
+          <p class="truncate">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam
+            animi atque laborum, sunt facere nemo accusantium quo saepe incidunt
+            officiis magnam recusandae veritatis reprehenderit placeat quia quas
+            voluptas tenetur libero.
+          </p>
+          <a href="#" class="approve green-text">Approve</a> |
+          <a href="#" class="deny red-text">Deny</a>
+        </li>
+        <li class="collection-item avatar">
+          <img
+            src="../../../../assets/images/person1.jpg"
+            alt=""
+            class="circle"
+          />
+          <span class="title">Jude Smith</span>
+          <p class="truncate">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam
+            animi atque laborum, sunt facere nemo accusantium quo saepe incidunt
+            officiis magnam recusandae veritatis reprehenderit placeat quia quas
+            voluptas tenetur libero.
+          </p>
+          <a href="#" class="approve green-text">Approve</a> |
+          <a href="#" class="deny red-text">Deny</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- section: recent posts and todos -->
+<section class="section section-recent">
+  <div class="row">
+    <div class="col s12 m6 l8">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title"> Recent Quotes </span>
+          <table class="striped responsive-table">
+            <thead>
+              <tr>
+                <th>Full Name</th>
+                <th>Pickup Location</th>
+                <th>Destination</th>
+                <th>Amount</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Jason Smith</td>
+                <td>Plot 225 Arab Road Kubwa</td>
+                <td>Suit 17A Emab Plaza Wuse</td>
+                <td>#55000</td>
+                <td>
+                  <a
+                    href="#"
+                    class="btn pink lighten-4 black-text text-lighten-2"
+                  >
+                    More details
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m6 l4">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title"> Quick Todos </span>
+          <form id="todo-form">
+            <div class="input-field">
+              <input type="text" id="todo" placeholder="Add Todo" />
+            </div>
+          </form>
+          <ul class="collection todos">
+            <li class="collection-item">
+              <div>
+                Todo One
+                <a href="!#" class="secondary-content delete">
+                  <i class="material-icons">close</i>
+                </a>
+              </div>
+            </li>
+            <li class="collection-item">
+              <div>
+                Todo Two
+                <a href="!#" class="secondary-content delete">
+                  <i class="material-icons">close</i>
+                </a>
+              </div>
+            </li>
+            <li class="collection-item">
+              <div>
+                Todo Three
+                <a href="!#" class="secondary-content delete">
+                  <i class="material-icons">close</i>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- fixed button action -->
+<div class="fixed-action-btn">
+  <a href="#!" class="btn-floating btn-large pink darken-1 black-text">
+    <i class="material-icons">add</i>
+  </a>
+  <ul>
+    <li>
+      <a
+        href="#quotes-modal"
+        class="modal-trigger btn-floating purple white-text"
+      >
+        <i class="material-icons">mode_edit</i>
+      </a>
+    </li>
+    <li>
+      <a
+        href="#comments-modal"
+        class="modal-trigger btn-floating brown darken-1 white-text"
+      >
+        <i class="material-icons">mode_comment</i>
+      </a>
+    </li>
+    <li>
+      <a
+        href="#user-modal"
+        class="modal-trigger btn-floating red lighten-1 white-text"
+      >
+        <i class="material-icons">supervisor_account</i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- add comment modal -->
+<div id="comments-modal" class="modal">
+  <div class="modal-content">
+    <h4>Add Comments</h4>
+    <form>
+      <div class="input-field">
+        <input type="text" id="title" /> <label for="title">Title</label>
+      </div>
+      <div class="input-field">
+        <textarea name="body" id="body" class="materialize-textarea"></textarea>
+        <label for="body">Comment</label>
+      </div>
+    </form>
+    <div class="modal-footer">
+      <a
+        href="#!"
+        class="modal-action modal-close btn pink darken-1 black-text text-lighten-2"
+      >
+        Submit
+      </a>
+    </div>
+  </div>
+</div>
+<!-- add users modal -->
+<div id="user-modal" class="modal">
+  <div class="modal-content">
+    <form [formGroup]="registerForm">
+      <div class="row">
+        <div class="col s12 m10">
+          <div class="card grey lighten-2">
+            <div class="card-content black-text text-darken-2">
+              <span class="card-title"
+                >Getting Started, please fill in these forms</span
+              >
+              <div class="row">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input
+                      id="icon_prefix"
+                      formControlName="firstName"
+                      type="text"
+                    />
+                    <label for="icon_prefix">First Name</label>
+                    <small class="red-text text-lighten-3"
+                      >This field is required
+                    </small>
+                  </div>
+                  <div class="input-field col s6">
+                    <i class="material-icons prefix">message</i>
+                    <input
+                      id="icon_email"
+                      formControlName="email"
+                      type="email"
+                    />
+                    <label for="icon_email">Email</label>
+                    <small class="red-text text-lighten-3"
+                      >This field is required</small
+                    >
+                    <small class="red-text text-lighten-3"
+                      >Please use a valid email</small
+                    >
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input formControlName="phone" type="tel" />
+                    <label for="phone">Phone number</label>
+                    <small class="red-text text-lighten-3"
+                      >Please input a valid phone number</small
+                    >
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input formControlName="password" type="password" />
+                    <label for="password">Password</label>
+                    <small class="red-text text-lighten-3"
+                      >This field is required</small
+                    >
+                    <small class="red-text text-lighten-3"
+                      >A minimum of 6 characters is required</small
+                    >
+                    <small class="red-text text-lighten-3"
+                      >Special characters are required</small
+                    >
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input formControlName="cnfPassword" type="password" />
+                    <label for="cnfPassword">Confirm Password</label>
+                    <small class="red-text text-lighten-3"
+                      >Password does not match</small
+                    >
+                  </div>
+                </div>
+                <div class="col s6">
+                  <button
+                    class="btn pink-text text-lighten-2 black lighten-4 waves-effect waves-light"
+                    type="submit"
+                    (click)="register()"
+                  >
+                    Register <i class="material-icons right">send</i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="modal-footer">
+      <a
+        href="#!"
+        class="modal-action modal-close btn pink darken-1 black-text text-lighten-2"
+      >
+        Submit
+      </a>
+    </div>
+  </div>
+</div>
+<!-- add quotes modal -->
+<div id="quotes-modal" class="modal">
+  <div class="modal-content">
+    <form [formGroup]="quoteForm">
+      <div class="row">
+        <div class="col s12 m10">
+          <div class="card grey lighten-2">
+            <div class="card-content dark-black-text text-lighten-1">
+              <span class="card-title">
+                Get an approximate fee for your relocation with few
+                details</span
+              >
+              <div class="row">
+                <div class="input-field col s12">
+                  <input
+                    formControlName="pickupLocation"
+                    type="text"
+                    placeholder="Suit 17a Emab Plaza, Wuse Abuja."
+                  />
+                  <label for="pickupLocation">Pick up Location</label>
+                  <small class="red-text text-lighten-3"
+                    >This field is required</small
+                  >
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input
+                    formControlName="destination"
+                    type="text"
+                    placeholder="Plot 112 Arab Road, Kubwa Abuja."
+                  />
+                  <label for="destination">Destination</label>
+                  <small class="red-text text-lighten-3"
+                    >This feild is required</small
+                  >
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea
+                    name="description"
+                    formControlName="description"
+                    type="text"
+                    placeholder="Give us extra description on the address such as Landmarks and unique directions"
+                  ></textarea>
+                  <label for="description">Description</label>
+                </div>
+              </div>
+            </div>
+            <div class="card-action">
+              <div class="container">
+                <button
+                  class="btn pink-text text-lighten-2 black lighten-4 waves-effect waves-light modal-close"
+                  type="submit"
+                  (click)="quote()"
+                >
+                  Get Quote <i class="material-icons right">send</i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- preloader -->
+<div class="loader preloader-wrapper big active">
+  <div class="spinner-layer spinner-blue-only">
+    <div class="circle-clipper left"><div class="circle"></div></div>
+    <div class="gap-patch"><div class="circle"></div></div>
+    <div class="circle-clipper right"><div class="circle"></div></div>
+  </div>
+</div>

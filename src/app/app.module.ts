@@ -15,8 +15,16 @@ import { QuotesComponent } from './components/quotes/quotes.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { CommentComponent } from './components/comment/comment.component';
+
 
 import { UserService } from './services/user.service';
+import { DashboardcommentsComponent } from './components/dashboard/dashboardcomments/dashboardcomments.component';
+import { DashboardnavbarComponent } from './components/dashboard/dashboardnavbar/dashboardnavbar.component';
+import { DashboardfooterComponent } from './components/dashboard/dashboardfooter/dashboardfooter.component';
+import { DashboardsectionComponent } from './components/dashboard/dashboardsection/dashboardsection.component';
+import { AllquotesComponent } from './components/dashboard/allquotes/allquotes.component';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +37,13 @@ import { UserService } from './services/user.service';
     QuotesComponent,
     DashboardComponent,
     ProfileComponent,
-    ChatComponent
+    ChatComponent,
+    CommentComponent,
+    DashboardcommentsComponent,
+    DashboardnavbarComponent,
+    DashboardfooterComponent,
+    DashboardsectionComponent,
+    AllquotesComponent
   ],
   imports: [
     BrowserModule,

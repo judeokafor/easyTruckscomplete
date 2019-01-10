@@ -2,30 +2,36 @@
   <nav class="transparent">
     <div class="container">
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo">easyTrucks</a>
-        <a href="#" data-activates="mobile-nav" class="right show-on-large button-collapse">
+        <a [routerLink]="['/']" routerLinkActive="router-link-active"  class="brand-logo"><span class="logo-design pink-text text-lighten-2">easyTrucks</span></a>
+        <a href="#" data-activates="mobile-nav" class="right show-on-medium-and-down button-collapse">
           <i class="material-icons">menu</i>
         </a>
         <ul class="right hide-on-med-and-down">
+            <li>
+                <a [routerLink]="['/']" routerLinkActive="router-link-active" class="pink-text text-lighten-2">home</a>
+              </li>
           <li>
-            <a [routerLink]="['/dashboard']" routerLinkActive="router-link-active"  class="pink-text text-lighten-2">dashboard</a>
+            <a [routerLink]="['/dashboard']" routerLinkActive="router-link-active" class="pink-text text-lighten-2">dashboard</a>
           </li>
           <li>
-            <a [routerLink]="['/services']" routerLinkActive="router-link-active"  class="pink-text text-lighten-2">our services</a>
+            <a [routerLink]="['/services']" routerLinkActive="router-link-active" class="pink-text text-lighten-2">our services</a>
           </li>
           <li>
-            <a [routerLink]="['/register']" routerLinkActive="router-link-active"  class="pink-text text-lighten-2">register</a>
+            <a [routerLink]="['/quotes']" routerLinkActive="router-link-active" class="pink-text text-lighten-2">quote</a>
           </li>
           <li>
             <a class="pink-text text-lighten-2" [routerLink]="['/login']" routerLinkActive="router-link-active"> login</a>
           </li>
+          <li *ngIf="admin">
+              <a class="pink-text text-lighten-2" [routerLink]="['/allquotes']" routerLinkActive="router-link-active"> admin</a>
+            </li>
         </ul>
         <!-- sidebar -->
         <ul class="side-nav" id="mobile-nav">
           <li>
             <div class="user-view">
               <div class="background">
-                <img src="../../../assets/images/resort1.jpg" alt="">
+                <img src="../../../assets/images/sidebarbackground.jpg" alt="">
               </div>
               <a href="#">
                 <img src="../../../assets/images/background.jpg" alt="" class="circle">
@@ -42,55 +48,30 @@
           </li>
 
           <li>
-            <a [routerLink]="['/dashboard']" routerLinkActive="router-link-active" > <i class="material-icons pink-text text-lighten-2">dashboard</i> dashboard</a>
+            <a [routerLink]="['/dashboard']" routerLinkActive="router-link-active"> <i class="material-icons pink-text text-lighten-2">dashboard</i>
+              dashboard</a>
           </li>
           <li>
-            <a [routerLink]="['/services']" routerLinkActive="router-link-active"  > <i class="material-icons pink-text text-lighten-2">services</i> our services</a>
+            <a [routerLink]="['/services']" routerLinkActive="router-link-active"> <i class="material-icons pink-text text-lighten-2">services</i>
+              our services</a>
           </li>
           <li>
-            <a [routerLink]="['/register']" routerLinkActive="router-link-active"  > <i class="material-icons pink-text text-lighten-2">book</i> register</a>
+            <a [routerLink]="['/register']" routerLinkActive="router-link-active"> <i class="material-icons pink-text text-lighten-2">book</i>
+              register</a>
           </li>
           <li>
             <a class="modal-trigger" href="#login-modal"> <i class="material-icons pink-text text-lighten-1">users</i> login</a>
           </li>
 
           <li>
-            <a href="#" class="btn btn-flat pink darken-2 waves-button-input waves-light"> <i class="material-icons pink-text text-lighten-2">download</i> logout</a>
+            <a href="#" class="btn btn-flat pink darken-2 waves-button-input waves-light"> <i class="material-icons pink-text text-lighten-2">download</i>
+              logout</a>
           </li>
 
         </ul>
-
       </div>
     </div>
   </nav>
-  <!-- showcase -->
-  <div class="showcase container">
-    <div class="row">
-      <div class="col l9 m10 s12 offset-m1 center">
-        <h5>
-          Relocation and movement made easy, quick and smart with easyTrucks
-        </h5>
-        <h1>
-          Swift and Reliable
-        </h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis possimus dignissimos obcaecati deleniti ullam tenetur doloremque
-          exercitationem odio saepe enim!
-        </p>
-        <br>
-        <br>
-        <h6>
-          <a href="#" class="pink-text text-lighten-2">Learn more</a>
-          about our services
-        </h6>
-        <br><br>
-        <p>
-          To get a calculated quote, please <a href="#" class="pink-text text-lighten-2">sign up</a> here
-
-        </p>
-      </div>
-    </div>
-  </div>
 </header>
 <!-- login modal -->
 <div id="login-modal" class="modal">
@@ -108,7 +89,8 @@
         <label for="password">Password</label>
       </div>
       <br>
-      <p>Dont have an account? <a class="pink-text text-lighten-2" [routerLink]="['/register']" routerLinkActive="router-link-active"> Register here</a></p>
+      <p>Dont have an account? <a class="pink-text text-lighten-2" [routerLink]="['/register']" routerLinkActive="router-link-active">
+        Register here</a></p>
     </form>
   </div>
   <div class="modal-footer">
@@ -120,4 +102,3 @@
     </a>
   </div>
 </div>
-

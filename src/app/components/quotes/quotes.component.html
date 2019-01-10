@@ -1,3 +1,48 @@
-<p>
-  quotes works!
-</p>
+<section class="section section-quotes center container">
+  <div class="row">
+    <div class="col s12 m8 offset-m2">
+      <form [formGroup]="quoteForm">
+        <div class="card grey lighten-2">
+          <div class="card-content dark-black-text text-lighten-1">
+            <span class="card-title">
+              Get an approximate fee for your relocation with few details</span>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <input formControlName="pickupLocation" type="text" placeholder="Suit 17a Emab Plaza, Wuse Abuja." />
+                <label for="pickupLocation">Pick up Location</label>
+                <small class="red-text text-lighten-3">This feild is required</small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input formControlName="destination" type="text" placeholder="Plot 112 Arab Road, Kubwa Abuja." />
+                <label for="destination">Destination</label>
+                <small class="red-text text-lighten-3">This feild is required</small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea formControlName="description" type="text" placeholder="Give us extra description on the address such as Landmarks and unique directions"></textarea>
+                <label for="description">Description</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea formControlName="event" type="text" placeholder="Give us extra description on the address such as Landmarks and unique directions"></textarea>
+                <label for="description">Description</label>
+              </div>
+            </div>
+          </div>
+          <div class="card-action">
+            <div class="container">
+              <button class="btn pink-text text-lighten-2 black lighten-4 waves-effect waves-light" type="submit" (click)="quote()">
+                Register <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
