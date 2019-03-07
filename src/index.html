@@ -8,6 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/css/alert-materialize.css">
   <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Parisienne" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -15,72 +16,7 @@
 
 <body>
   <app-root></app-root>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC65bB_5bzEXEvvZpeNr7_TKwJ90FANtqA&callback=initMap">
-  </script>
-  <script>
-    function initMap() {
-
-      // map options
-      var options = {
-        zoom: 10,
-        center: { lat: 9.0579, lng: 7.4951 }
-
-      }
-      //new map
-      var map = new google.maps.Map(document.getElementById('map'), options);
-
-      var markers = [
-        {
-          coords: { lat: 9.0579, lng: 7.4951 },
-          iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content: '<h1> Emab Plaza opposite Banex </h1>'
-        },
-        {
-          coords: { lat: 9.0897, lng: 7.5678 },
-          content: '<h1>judeee house </h1>'
-        },
-        {
-          coords: { lat: 9.1009, lng: 7.7896 },
-          iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content: '<h1> In my fathers house</h1>'
-        }
-
-      ];
-      //loop through markers
-
-
-      for (var i = 0; i < markers.length; i++) {
-        //add marker
-        addMarker(markers[i]);
-
-      }
-
-      //add Marker function
-      function addMarker(props) {
-        var marker = new google.maps.Marker({
-          position: props.coords,
-          map: map,
-          animation: google.maps.Animation.BOUNCE,
-          // icon: props.iconImage    (commented out)
-        });
-
-        //  check for custom icon
-        if (props.iconImage) {
-          //setIcon image
-          marker.setIcon(props.iconImage);
-
-        }
-        //check for content
-        if (props.content) {
-          var infoWindow = new google.maps.InfoWindow({
-            content: props.content
-          });
-          marker.addListener('click', function () {
-            infoWindow.open(map, marker);
-          });
-        }
-      }
-    }
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC65bB_5bzEXEvvZpeNr7_TKwJ90FANtqA">
   </script>
 </body>
 

@@ -1,41 +1,53 @@
-<section class="section section-login center container">
-  <div class="row">
-    <div class="col s12 m6 offset-m3">
-      <form [formGroup]="loginForm">
-        <div class="card grey lighten-2">
-          <div class="card-content black-text text-darken-2">
-            <span class="card-title">Please Sign In Here</span>
-            <div class="row">
+<section class="section section-login grey lighten-5">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m8 offset-m2">
+        <form [formGroup]="loginForm">
+          <div class="card grey lighten-4">
+            <div class="center">
+              <span class="card-title logo-design blue-grey-text darken-2 mt-2 mb-2">easyTrucks</span>
+            </div>
+            <div class="materialert success mt-2" role="alert" *ngIf="error.show == true">
+              <i class="material-icons">check</i>
+              {{error.msg}}
+            </div>
+            <div class="card-content black-text text-darken-2">
+
               <div class="row">
                 <div class="input-field col s12">
-                  <i class="material-icons prefix">message</i>
-                  <input formControlName="email" id="icon_email" type="email">
+                  <i class="material-icons prefix">mail</i>
+                  <input id="icon_email" formControlName="email" type="email" [(ngModel)]="quotes.email">
                   <label for="icon_email">Email</label>
-                  <small class="red-text text-lighten-3">Please use a valid email</small>
+                  <small *ngIf="email.errors?.required && email.touched" class="red-text text-lighten-3">This field is required</small>
+                  <small *ngIf="email.errors?.email && username.touched" class="red-text text-lighten-3">Please use a valid
+                    email</small>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
+                  <i class="material-icons prefix">lock</i>
                   <input formControlName="password" type="password">
                   <label for="password">Password</label>
                 </div>
               </div>
-              <div class="col s6">
-                <button class="btn pink-text text-lighten-2 black lighten-4 waves-effect waves-light" type="submit" (click)="login()">Login
-                  <i class="material-icons right">send</i>
-                </button>
+              <div class="row">
+                <div class="col s12 m6 offset-m3 center">
+                  <button class="btn btn-rounded black white-text" type="button" (click)="login()">Login
+                    <i class="material-icons right">send</i>
+                  </button>
+                </div>
               </div>
             </div>
+            <div class="card-action center">
+              <p>Don't have an account? please
+                <a class="purple-text text-lighten-2" [routerLink]="['/register']" routerLinkActive="router-link-active">sign
+                  up
+                </a>
+              </p>
+            </div>
           </div>
-          <div class="card-action">
-            <p>Don't have an account, please
-              <a class="pink-text text-lighten-2" [routerLink]="['/register']" routerLinkActive="router-link-active">Register
-                here
-              </a>
-            </p>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
 </section>

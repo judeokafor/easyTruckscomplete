@@ -11,20 +11,31 @@ import { UserService } from '../../services/user.service';
 export class DashboardComponent implements OnInit {
 
   constructor(
-    private _router : Router,
-    private _userService : UserService,
+    private _router: Router,
+    private _userService: UserService,
   ) { }
 
   ngOnInit() {
   }
-  logout(){
+  logout() {
     this._userService.logout()
-    .subscribe(
-      data=>{
+      .subscribe(
+        data => {
+          console.log(data);
+          this._router.navigate(['/login'])
+        },
+        error => console.error(error)
+      )
+  }
+  user() {
+    this._userService.user().subscribe(
+      data => {
         console.log(data);
-        this._router.navigate(['/login'])
+        this._router.navigate(['/dashboard'])
       },
-      error=>console.error(error)
+      error => {
+        console.error(error)
+      }
     )
   }
 }

@@ -1,65 +1,81 @@
-<form [formGroup]="registerForm">
-  <div class="row">
-    <div class="col s12 m10">
-      <div class="card grey lighten-2">
-        <div class="card-content black-text text-darken-2">
-          <span class="card-title">Getting Started, please fill in these forms</span>
+<section class="section section-register grey lighten-5 pt-3 pb-3">
+  <div class="container">
+    <div class="form-header  ">
+      <div class="form-overlay">
+        <form [formGroup]="registerForm">
           <div class="row">
-            <div class="row">
-              <div class="input-field col s6">
-                <i class="material-icons prefix">account_circle</i>
-                <input id="icon_prefix"
-                formControlName="firstName"
-                type="text">
-                <label for="icon_prefix">First Name</label>
-                <small class="red-text text-lighten-3">This field is required
-                </small>
+            <div class="col s12 m8 offset-m2">
+              <div class="card hoverable grey lighten-4">
+                <div class="materialert error"  role="alert" *ngIf="error.show == true">
+                  <div class="material-icons">error_outline</div>
+                  {{error.msg}}
+                </div>
+                <div class="card-content black-text text-darken-2">
+                  <div class="register center">
+                    <span class="card-title logo-design blue-grey-text text-darken-2 center">easyTrucks</span>
+                    <p class="black-text center">Registration Form</p>
+                  </div>
+                  <div class="row">
+                    <div class="">
+                      <div class="input-field col s12 m6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="icon_prefix" formControlName="firstName" [(ngModel)]="quotes.firstName" type="text">
+                        <label for="icon_prefix">First Name</label>
+                      </div>
+                      <div class="input-field col s12 m6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="icon_surffix" formControlName="lastName" type="text">
+                        <label for="icon_surffix">Last Name</label>
+                        <small *ngIf="lastName.errors?.required && lastName.touched" class="red-text text-lighten-3">This field is required
+                        </small>
+                      </div>
+                      <div class="input-field col s12 m6">
+                        <i class="material-icons prefix">mail</i>
+                        <input id="icon_email" formControlName="email" [(ngModel)]="quotes.email" type="email">
+                        <label for="icon_email">Email</label>
+                      </div>
+                    </div>
+                    <div class="input-field col s12 m6">
+                      <i class="material-icons prefix">local_phone</i>
+                      <input formControlName="phone" [(ngModel)]="quotes.phone" type="tel">
+                      <label for="phone">Phone number</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                      <i class="material-icons prefix">lock</i>
+                      <input formControlName="password" type="password">
+                      <label for="password">Password</label>
+                      <small *ngIf="password.errors?.required && password.touched" class="red-text text-lighten-3" >This field is required</small>
+                      <!-- <small class="red-text text-lighten-3">A minimum of 6 characters is required</small>
+                      <small class="red-text text-lighten-3">Special characters are required</small> -->
+                    </div>
+                    <div class="input-field col s12 m6">
+                      <i class="material-icons prefix">lock</i>
+                      <input formControlName="cnfPassword" type="password">
+                      <label for="cnfPassword">Confirm Password</label>
+                      <small *ngIf="cnfPassword.errors?.required && cnfPassword.touched" class="red-text text-lighten-3" >This field is required</small>
+                      <!-- <small *ngIf="password !== cnfPasword && cnfPassword.touched" class="red-text text-lighten-3">Password does not match</small> -->
+                    </div>
+                    <div class="row">
+                      <div class="col s12 m6 offset-m3 mt-3">
+                        <button class="btn btn-rounded black white-textcenter" type="button" (click)="register()">Register
+                          <i class="material-icons right">send</i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-action">
+                  <p>already have an account? please Login.
+                    <a class="pink-text text-lighten-2" [routerLink]="['/login']" routerLinkActive="router-link-active">sign
+                      In
+                    </a>
+                  </p>
+                </div>
               </div>
-              <div class="input-field col s6">
-                <i class="material-icons prefix">message</i>
-                <input id="icon_email" formControlName="email" type="email">
-                <label for="icon_email">Email</label>
-                <small class="red-text text-lighten-3">This field is required</small>
-                <small class="red-text text-lighten-3">Please use a valid email</small>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input formControlName="phone" type="tel">
-                <label for="phone">Phone number</label>
-                <small class="red-text text-lighten-3">Please input a valid phone number</small>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input formControlName="password" type="password">
-                <label for="password">Password</label>
-                <small class="red-text text-lighten-3">This field is required</small>
-                <small class="red-text text-lighten-3">A minimum of 6 characters is required</small>
-                <small class="red-text text-lighten-3">Special characters are required</small>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input formControlName="cnfPassword" type="password">
-                <label for="cnfPassword">Confirm Password</label>
-                <small class="red-text text-lighten-3">Password does not match</small>
-              </div>
-            </div>
-            <div class="col s6">
-              <button class="btn pink-text text-lighten-2 black lighten-4 waves-effect waves-light" type="submit" (click)="register()">Register
-                <i class="material-icons right">send</i>
-              </button>
             </div>
           </div>
-        </div>
-        <div class="card-action">
-          <p>already have an account? please
-            <a class="pink-text text-lighten-2" [routerLink]="['/login']" routerLinkActive="router-link-active">sign In
-            </a>
-          </p>
-        </div>
+        </form>
       </div>
     </div>
   </div>
-</form>
+</section>

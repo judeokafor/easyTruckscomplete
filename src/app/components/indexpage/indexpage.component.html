@@ -1,30 +1,186 @@
-<section class="section section-showcase">
-  <!-- showcase -->
-  <div class="container showcase">
-    <div class="row">
-      <div class="col s12 center light-blue-text text-lighten-4">
-        <h5 class="">
-          Relocation and movement made easy, quick and smart with easyTrucks
-        </h5>
-        <h1 class="">
-          Swift and Reliable
-        </h1>
-        <p><span class="lead">Get a quick quotation <a [routerLink]="['/quotes']" routerLinkActive="router-link-active"><span
-          class="pink-text text-lighten-3">here</span></a></span></p>
-        
+<!-- showcase -->
+<section id="home" class="section section-showcase scrollspy">
+  <div class="primary-overlay showcase row">
+    <app-quotes></app-quotes>
+    <div class="col s12 m6 center white-text">
+      <div class="main-text">
+        <h4 class="welcome-text">
+          Relocation made easy, quick and smart with us
+        </h4>
         <br>
-        <h6>
-          <a href="#" class="pink-text text-lighten-2">Learn more</a>
-          about our services
-        </h6>
-        <br><br>
-        <p>
-          To get a calculated quote, please <a [routerLink]="['/quotes']" routerLinkActive="router-link-active"  class="pink-text text-lighten-2">sign up</a> here
-        </p>
+        <br>
+        <div class="right">
+          <a href="#contactus" class="scrollspy btn transparent waves-effect waves-light white-text">Work With Us</a>
+        </div>
+      </div>
+    </div>
+    <a href="#service" class="white-text">
+      <i class="material-icons medium scroll-icon">arrow_drop_down_circle</i>
+    </a>
+  </div>
+</section>
+
+<!-- <div class="parallax-container">
+  <div class="parallax"><img src="../../../assets/images//darkbackground2.jpg"></div>
+</div> -->
+
+<!-- services -->
+<section id="service" class="section section-services grey lighten-5 scrollspy">
+  <div id="services" class="container center scrollspy">
+    <div class="row">
+      <div class="col s12 m6 l6">
+        <div class="card-small">
+          <div class="card-panel">
+            <i class="material-icons large">home</i>
+            <div class="card-content">
+              <h4>Home Properties</h4>
+              <p>At easyTrucks, We make relocation to Your New Home easier and professional, no matter the size or amount
+                of properties you own, be ensure it would get to the designated destination safe. </p>
+                <button class="btn btn-rounded waves-effect waves-light black lighten-2">Get
+                  Quote
+                </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6 l6">
+        <div class="card-small">
+          <div class="card-panel">
+            <i class="material-icons large">domain</i>
+            <div class="card-content">
+              <h4>Officewares</h4>
+              <p>No Matter the type of Office equipment to be handled, We at easyTrucks know just how to move your Equipment
+                safe and fast. so you can sit back and relax know that everthing is being handled expertly.
+              </p>
+              <button class="btn btn-rounded waves-effect waves-light black lighten-2">Get
+                Quote
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-<section class="section section-map">
-  <div id="map"></div>
+<!-- <div class="parallax-container">
+  <div class="parallax"><img src="../../../assets/images//darkbackground1.jpg"></div>
+</div> -->
+
+<!-- image-slide -->
+
+<app-image-slider></app-image-slider>
+
+<!-- about us -->
+<section id="aboutus" class="section section-aboutus grey lighten-5 scrollspy">
+  <div id="about" class="scrollspy">
+    <div class="card mt-3 mb-3 grey lighten-4">
+      <div class="card-content">
+        <div class="row">
+          <div class="col s12 m6 l4">
+            <div class="card hoverable">
+              <div class="card-panel grey lighten-5">
+                <div class="card-content">
+                  <h5 class="card-title">Small Truck</h5>
+                  <div class="materialboxed">
+                    <img src="../../../assets/images/small truck.jpg" class="responsive-img rounded">
+                  </div>
+                  <div>
+                    <p>Our small truck Mercedes 670s has the capacity to carry:</p>
+                    <ul class="collection">
+                      <li class="collection-item">
+                        A complete set of 4 sitter cushion
+                      </li>
+                      <li class="collection-item">
+                        A standard 6 x 6 bed along side its wood work
+                      </li>
+                      <li class="collection-item">
+                        A complete televsion set and its accesories
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card hoverable">
+              <div class="card-panel grey lighten-5">
+                <div class="card-content">
+                  <h5 class="card-title">Medium Truck</h5>
+                  <div class="materialboxed">
+                    <img src="../../../assets/images/medium truck.jpg" class="responsive-img rounded">
+                  </div>
+                  <div>
+                    <p>Our Medium truck Mercedes 890s has the capacity to carry:</p>
+                    <ul class="collection">
+                      <li class="collection-item">
+                        2 complete set of 4 sitter cushion
+                      </li>
+                      <li class="collection-item">
+                        3 standard 6 x 6 bed along side its wood work
+                      </li>
+                      <li class="collection-item">
+                        3 complete televsion set and its accesories
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card hoverable">
+              <div class="card-panel grey lighten-5">
+                <div class="card-content">
+                  <h5 class="card-title">Large Truck</h5>
+                  <div class="materialboxed">
+                    <img src="../../../assets/images/large truck.jpg" class="responsive-img rounded">
+                  </div>
+                  <div>
+                    <p>Our Large truck Mercedes 1070s has the capacity to carry:</p>
+                    <ul class="collection">
+                      <li class="collection-item">
+                        2 complete set of 4 sitter cushion
+                      </li>
+                      <li class="collection-item">
+                        5 standard 6 x 6 bed along side its wood work
+                      </li>
+                      <li class="collection-item">
+                        4 complete televsion set and its accesories
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m6 offset-m3 mt-2 center">
+              <div class=" center">
+                <a class="btn black scrollspy" href="#quotes">
+                  Get Quote Now
+                </a>
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Testimonial -->
+<app-cs></app-cs>
+<!-- contact us -->
+<app-contactus></app-contactus>
+<section class="section comments-faq">
+  <div class="nav-container">
+    <div class="row">
+      <div class="col s12 m6">
+        <app-faq></app-faq>
+      </div>
+      <div class="col s12 m6">
+        <app-comment></app-comment>
+      </div>
+    </div>
+  </div>
 </section>

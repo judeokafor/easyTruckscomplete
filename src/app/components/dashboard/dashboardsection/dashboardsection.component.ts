@@ -15,6 +15,7 @@ export class DashboardsectionComponent implements OnInit {
   jquery_code() {
     //hide section
     $(".section").hide();
+    
 
     setTimeout(function() {
       $(document).ready(function() {

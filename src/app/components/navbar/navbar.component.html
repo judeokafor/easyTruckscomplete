@@ -1,35 +1,44 @@
-<header class="main-header">
-  <nav class="transparent">
+<header class="main-header navbar-fixed">
+  <nav class=" blue-grey darken-3 ">
     <div class="container">
       <div class="nav-wrapper">
-        <a [routerLink]="['/']" routerLinkActive="router-link-active"  class="brand-logo"><span class="logo-design pink-text text-lighten-2">easyTrucks</span></a>
+        <a [routerLink]="['/']" routerLinkActive="router-link-active"  class="brand-logo"><span class="logo-design white-text text-lighten-5">easyTrucks</span></a>
         <a href="#" data-activates="mobile-nav" class="right show-on-medium-and-down button-collapse">
           <i class="material-icons">menu</i>
         </a>
         <ul class="right hide-on-med-and-down">
             <li>
-                <a [routerLink]="['/']" routerLinkActive="router-link-active" class="pink-text text-lighten-2">home</a>
+              <div class="divider"></div>
+            </li>
+            <li>
+                <a [routerLink]="['/']" routerLinkActive="router-link-active"  class="white-text text-lighten-2">Home</a>
               </li>
-          <li>
-            <a [routerLink]="['/dashboard']" routerLinkActive="router-link-active" class="pink-text text-lighten-2">dashboard</a>
+          <li *ngIf="user">
+            <a [routerLink]="['/dashboard']" routerLinkActive="router-link-active" class="white-text text-lighten-2">Dashboard</a>
           </li>
           <li>
-            <a [routerLink]="['/services']" routerLinkActive="router-link-active" class="pink-text text-lighten-2">our services</a>
+            <a href="#service" class="white-text text-lighten-2">Our Services</a>
+          </li>
+          <li *ngIf="user">
+            <a [routerLink]="['/quotation']" routerLinkActive="router-link-active" class="white-text text-lighten-2">Get Quote</a>
           </li>
           <li>
-            <a [routerLink]="['/quotes']" routerLinkActive="router-link-active" class="pink-text text-lighten-2">quote</a>
+            <a href="#aboutus" class="white-text text-lighten-2">About Us</a>
           </li>
           <li>
-            <a class="pink-text text-lighten-2" [routerLink]="['/login']" routerLinkActive="router-link-active"> login</a>
+            <a href="#contactus" class="white-text text-lighten-2"><i class="material-icons left white-text">phone</i> 07065383765</a>
           </li>
-          <li *ngIf="admin">
-              <a class="pink-text text-lighten-2" [routerLink]="['/allquotes']" routerLinkActive="router-link-active"> admin</a>
+          <li *ngIf="user">
+            <a class="white-text text-lighten-2" [routerLink]="['/logout']" routerLinkActive="router-link-active"> logout</a>
+          </li>
+          <li *ngIf="user">
+              <a class="white-text text-lighten-2" [routerLink]="['/allquotes']" routerLinkActive="router-link-active"> All Quotes</a>
             </li>
         </ul>
         <!-- sidebar -->
         <ul class="side-nav" id="mobile-nav">
-          <li>
-            <div class="user-view">
+          <li *ngIf="user">
+            <div  class="user-view">
               <div class="background">
                 <img src="../../../assets/images/sidebarbackground.jpg" alt="">
               </div>
@@ -37,34 +46,40 @@
                 <img src="../../../assets/images/background.jpg" alt="" class="circle">
               </a>
               <a href="#">
-                <span class="name pink-text lighten-4">
+                <span class="name white-text lighten-4">
                   John Doe
                 </span>
               </a>
-              <a href="#"><span class="email pink-text lighten-4">
+              <a href="#"><span class="email white-text lighten-4">
                   jdoe@gmail.com
                 </span></a>
             </div>
           </li>
 
-          <li>
-            <a [routerLink]="['/dashboard']" routerLinkActive="router-link-active"> <i class="material-icons pink-text text-lighten-2">dashboard</i>
+          <li *ngIf="user">
+            <a [routerLink]="['/dashboard']" routerLinkActive="router-link-active"> <i class="material-icons white-text text-lighten-2">dashboard</i>
               dashboard</a>
           </li>
           <li>
-            <a [routerLink]="['/services']" routerLinkActive="router-link-active"> <i class="material-icons pink-text text-lighten-2">services</i>
+            <a [routerLink]="['/']" routerLinkActive="router-link-active" class="white-text text-lighten-2">home</a>
+          </li>
+          <li>
+              <a [routerLink]="['/quotes']" routerLinkActive="router-link-active" class="white-text text-lighten-2">Get Quote</a>
+            </li>
+          <li>
+            <a [routerLink]="['/services']" routerLinkActive="router-link-active"> <i class="material-icons white-text text-lighten-2">services</i>
               our services</a>
           </li>
           <li>
-            <a [routerLink]="['/register']" routerLinkActive="router-link-active"> <i class="material-icons pink-text text-lighten-2">book</i>
-              register</a>
+            <a [routerLink]="['/aboutus']" routerLinkActive="router-link-active"> <i class="material-icons white-text text-lighten-2">book</i>
+              About Us</a>
           </li>
-          <li>
-            <a class="modal-trigger" href="#login-modal"> <i class="material-icons pink-text text-lighten-1">users</i> login</a>
+          <li *ngIf="user">
+            <a class="modal-trigger" href="#login-modal"> <i class="material-icons white-text text-lighten-1">users</i> login</a>
           </li>
 
-          <li>
-            <a href="#" class="btn btn-flat pink darken-2 waves-button-input waves-light"> <i class="material-icons pink-text text-lighten-2">download</i>
+          <li *ngIf="user">
+            <a href="#" class=" white-text darken-2"> <i class="material-icons white-text text-lighten-2">download</i>
               logout</a>
           </li>
 
@@ -89,7 +104,7 @@
         <label for="password">Password</label>
       </div>
       <br>
-      <p>Dont have an account? <a class="pink-text text-lighten-2" [routerLink]="['/register']" routerLinkActive="router-link-active">
+      <p>Dont have an account? <a class="white-text text-lighten-2" [routerLink]="['/register']" routerLinkActive="router-link-active">
         Register here</a></p>
     </form>
   </div>

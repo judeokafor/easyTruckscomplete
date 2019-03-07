@@ -1,48 +1,117 @@
-<section class="section section-quotes center container">
-  <div class="row">
-    <div class="col s12 m8 offset-m2">
-      <form [formGroup]="quoteForm">
-        <div class="card grey lighten-2">
-          <div class="card-content dark-black-text text-lighten-1">
-            <span class="card-title">
-              Get an approximate fee for your relocation with few details</span>
+<div class="col s12 m6 black-text" id="quotes">
+  <div class="card grey lighten-4 ">
+    <div class="card-panel grey lighten-4">
+      <div class="card-content center">
+        <span class="card-title">Your Truck is one click away</span>
+        <div class="divider"></div>
+        <form [formGroup]="quoteForm">
+          <div class="row">
+            <div class="col s12">
+              <div class="input-field">
+                <i class="material-icons prefix"></i>
+                <input type="text" id="firstName" formControlName="firstName">
+                <small *ngIf="firstName.errors?.required && firstName.touched" class="red-text">Customer's Name is required</small>
+                <label for="firstName">FirstName</label>
+              </div>
+            </div>
+            <div class="col s12 m6">
+              <div class="input-field">
+                <i class="material-icons prefix"></i>
+                <input type="email" formControlName="email" id="email">
+                <small *ngIf="email.errors?.required && email.touched" class="red-text">Customer's Email is required</small>
+                <small *ngIf="email.errors?.email && email.touched" class="red-text">Please provide a valid Email Address</small>
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div class="col s12 m6">
+              <div class="input-field">
+                <i class="material-icons prefix"></i>
+                <input type="tel" formControlName="phone">
+                <small *ngIf="phone.errors?.required && phone.touched" class="red-text">Customer's Phone Number is required</small>
+                <small *ngIf="phone.errors?.minlength && phone.touched" class="red-text">Phone Number should be minimum of
+                  11 characters.</small>
+                <small *ngIf="phone.errors?.maxlength && phone.touched" class="red-text">Phone Number should be maximum of
+                  11 characters.</small>
+                <label>Phone No.</label>
+              </div>
+            </div>
+            <div class="col s12 m6">
+              <div class="input-field">
+                <i class="material-icons prefix"></i>
+                <input type="text" formControlName="pickUpLocation">
+                <small *ngIf="pickUpLocation.errors?.required && pickUpLocation.touched" class="red-text">Customer's Pick Up Location
+                  is required</small>
+                <label>PickUp Location</label>
+              </div>
+            </div>
+            <div class="col s12 m6 ">
+              <div class="input-field">
+                <i class="material-icons prefix"></i>
+                <input type="text" formControlName="dropOffLocation">
+                <small *ngIf="dropOffLocation.errors?.required && dropOffLocation.touched" class="red-text">Customer's dropOffLocation
+                  is required</small>
+                <label class="active">Destination</label>
+              </div>
+            </div>
+            <div class="col s12 m6">
+              <div class="input-field">
+                <i class="material-icons prefix"></i>
+                <input class="mydate" type="date" formControlName="pickUpDate">
+                <small *ngIf="pickUpDate.errors?.required && pickUpDate.touched" class="red-text">Please Specify a Date for
+                  pick up</small>
+                <label class="active">Proposed Date</label>
+              </div>
+            </div>
+            <div class="col s12 m6 ">
+              <div class="input-field">
+                <i class="material-icons prefix"></i>
+                <input type="time" class="mytime" formControlName="pickUpTime">
+                <small *ngIf="pickUpTime.errors?.required && pickUpTime.touched" class="red-text">Your preferred time is required</small>
+                <label class="active">Prefered Time</label>
+              </div>
+            </div>
+            <div class="col s12">
+              <div class="input-field">
+                <i class="material-icons prefix"></i>
+                <select id="select_truck" materialize="material_select" formControlName="truckSelection">
+                  <option value="" disabled>Select Truck size</option>
+                  <option [ngValue]="smalltruck" value="smalltruck" data-icon="../../../assets/images/small truck.jpg"
+                    class="right circle">Small Truck >10kg</option>
+                  <option [ngValue]="mediumtruck" value="mediumtruck" data-icon="../../../assets/images/medium truck.jpg"
+                    class="right circle">Medium Truck >50kg</option>
+                  <option [ngValue]="largetruck" value="largetruck" data-icon="../../../assets/images/large truck.jpg"
+                    class="right circle">Large Truck >100kg</option>
+                </select>
+                <small *ngIf="truckSelection.errors?.required && truckSelection.touched" class="red-text">Please select a
+                  truck
+                </small>
+              </div>
+            </div>
+            <br>
+            <div class="col s12">
+              <input formControlName="packaging" #packaging type="checkbox" class="filled-in" id="packaging" value="true" checked="checked" />
+              <label for="packaging">Do you want our packaging services?</label>
+            </div>
+            <br>
+            <div class="input-field col s12">
+              <i class="material-icons prefix">mode_edit</i>
+              <textarea id="description" class="materialize-textarea" formControlName="description" placeholder="Give us a brief description to your location including landmarks that can be of assistance"></textarea>
+              <label for="description">Description</label>
+              <small *ngIf="description.errors?.minlength && description.touched" class="red-text">Please give us adequate
+                information
+              </small>
+            </div>
+          </div>
+          <button (click)="getQuote()" [disabled]="!quoteForm.valid" type="submit" role="button" class=" btn btn-rounded btn-form black waves-effect waves-red white-text">Get
+            Quote
+          </button>
 
-            <div class="row">
-              <div class="input-field col s12">
-                <input formControlName="pickupLocation" type="text" placeholder="Suit 17a Emab Plaza, Wuse Abuja." />
-                <label for="pickupLocation">Pick up Location</label>
-                <small class="red-text text-lighten-3">This feild is required</small>
-              </div>
+          <div class="materialert success" role="alert" *ngIf="error.show == true">
+              <div class="material-icons">check</div>
+              {{error.msg}}
             </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input formControlName="destination" type="text" placeholder="Plot 112 Arab Road, Kubwa Abuja." />
-                <label for="destination">Destination</label>
-                <small class="red-text text-lighten-3">This feild is required</small>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <textarea formControlName="description" type="text" placeholder="Give us extra description on the address such as Landmarks and unique directions"></textarea>
-                <label for="description">Description</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <textarea formControlName="event" type="text" placeholder="Give us extra description on the address such as Landmarks and unique directions"></textarea>
-                <label for="description">Description</label>
-              </div>
-            </div>
-          </div>
-          <div class="card-action">
-            <div class="container">
-              <button class="btn pink-text text-lighten-2 black lighten-4 waves-effect waves-light" type="submit" (click)="quote()">
-                Register <i class="material-icons right">send</i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
-</section>
+</div>

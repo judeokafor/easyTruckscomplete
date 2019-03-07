@@ -1,3 +1,38 @@
-<p>
-  comment works!
-</p>
+<section class="section section-comment">
+  <div class="card hoverable">
+    <div class="card-panel grey lighten-2">
+      <div class="materialert success" role="alert" *ngIf="error.show == true">
+        <div class="material-icons">check</div>
+        {{error.msg}}
+      </div>
+      <span class="card-title">
+        Please leave us a comment about our Service
+      </span>
+      <div class="divider"></div>
+      <div class="card-content">
+        <form method="post" [formGroup]="commentForm">
+          <div class="row">
+            <div class="col s12 center">
+              <div class="input-field">
+                <input type="text" placeholder="Your Name" formControlName="username">
+                <label for="name">Name</label>
+                <small *ngIf="username.errors?.required && username.touched" class="red-text center">Your name will help us serve you better</small>
+              </div>
+            </div>
+            <div class="col s12">
+              <div class="input-field">
+                <input type="text" placeholder="Share your comments" formControlName="comment">
+                <label for="comment"> Comment Section</label>
+                <small *ngIf="comment.errors?.maxlength && comment.touched" class="red-text center">Not more than 50 words</small>
+                <small *ngIf="comment.errors?.required && comment.touched" class="red-text center">Your comment is required</small>
+              </div>
+            </div>
+          </div>
+          <div class="col s6">
+            <button [disabled]="!commentForm.valid || disable == true" class="btn btn-rounded waves-effect black" type="button" (click)="submitComment()">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

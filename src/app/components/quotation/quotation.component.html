@@ -1,0 +1,104 @@
+<section id="quotation" class="section section-quotation grey lighten-4">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m8 offset-m2">
+        <div class="card hoverable mb-2 z-depth-2">
+          <div class="card-panel">
+            <div class="card-title">
+              <span class="order center-align">
+                <h4>
+                  Order Summary
+                </h4>
+              </span>
+            </div>
+            <div class="card-content">
+              <h6 class="flow-text">Hope we can reach you with these contact details?</h6>
+              <table class="striped highlight centered responsive-table">
+                <thead>
+                  <tr>
+                    <th>
+                      Customer's Name <i class="material-icons">account_box</i>
+                    </th>
+                    <th>
+                      Customer's Phone Number <i class="material-icons">dialer_sip</i>
+                    </th>
+                    <th>
+                      Customer's Email <i class="material-icons">mail_outline</i>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      {{quotes.firstName | titlecase}}
+                    </td>
+                    <td>
+                      {{quotes.phone}}
+                    </td>
+                    <td>
+                      {{quotes.email | lowercase}}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <ul class="collection with-header">
+                <li class="collection-header">
+                  <h5>Order Details</h5>
+                </li>
+                <li class="collection-item">
+                  <small>Pick Up Location <i class="material-icons black-text">place</i></small>
+                  <h6 class="blue-grey-text">{{quotes.pickUpLocation | titlecase}}</h6>
+                </li>
+                <li class="collection-item">
+                  <small>Destination<i class="material-icons black-text">pin_drop</i></small>
+                  <h6 class="blue-grey-text">{{quotes.dropOffLocation | titlecase}}</h6>
+                </li>
+                <li class="collection-item">
+                  <small>Truck Selected <i class="material-icons black-text">local_shipping</i></small>
+                  <h6 class="blue-grey-text">{{quotes.truckSelection | titlecase}}</h6>
+                </li>
+                <li class="collection-item">
+                  <small>Do yo want our packaging service? <i class="material-icons black-text">accessible</i></small>
+                  <h6 class="blue-grey-text">{{quotes.packaging}}</h6>
+                </li>
+              </ul>
+              <div>
+                <label>Your Estimated Total Distance is:</label>
+                <span class="green-text distance right">{{quotes.distance}}</span>
+              </div>
+              <br>
+              <div>
+                <label>Estimated Fee:</label>
+                <span class="deep-purple-text amount right">
+                  #{{quotes.amount}}
+                </span>
+              </div>
+              <div class="mt-2 mb-3">
+                <small class="text-underline"><a class="red-text" href="#FAQ">Learn more about our charges and policy</a></small>
+                <small class="right paynow">Pay 50% now to confirm your appointment</small>
+              </div>
+              <div>
+                <div class="left">
+                  <button class="btn btn-rounded black white-text">Edit Quote <i class="material-icons right">mode_edit</i> </button>
+                </div>
+                <div class="right">
+                  <!-- include badge or somfin to these buttons -->
+                  <!-- <button class="btn btn-flat deep-purple white-text">Request Now</button> -->
+               <button type="button" class="btn btn-rounded deep-purple white-text"
+                  angular4-paystack
+                  [key]="'pk_test_8b516b9714b78acf3d4e283b794711ab88e96aa0'"
+                  [email]="quotes.email"
+                  [amount]="amountToKobo()"
+                  [ref]="refGenerator()"
+                  (close)="paymentCancel()"
+                  (callback)="paymentDone($event)"
+                >Request Now <i class="material-icons right">local_shipping</i> </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

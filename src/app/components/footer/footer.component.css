@@ -1,8 +1,10 @@
-footer {
+/* footer {
     background: url(../../../assets/images/navbarbackgrouund.jpg);
     background-size: cover;
     background-position: center;
-    color: whitesmoke;
-}
-.section-footer{
+    height: 100%;
+} */
+.section-copyright{
+    margin: 0px;
+    color: red;
 }

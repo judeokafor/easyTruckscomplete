@@ -1,14 +1,96 @@
 .section-showcase{
-    background: url(../../../assets/images/newbackground.jpg);
+    background: url(../../../assets/images/truck-background.jpg);
     background-size: cover;
     background-position: center;
     color: whitesmoke;
     min-height: 100vh;
+    position: relative;
+}
+.form-header {
+    /* background: url(../../../assets/images/rodrigo-abreu-565091-unsplash.jpg) !important; */
+    background-size: cover !important;
+    background-position: center !important;
+    min-height: 100vh !important;
+    position: relative !important;
 }
 .section-showcase .showcase {
     padding-top: 100px;
 }
-#map {
+
+/* silver color #C0C0C0 with 75% saturation  */
+.section-contact{
+    position: relative;
+}
+.contactform{
+    position: relative;
+    z-index: 1;
+}
+/* agm-map {
+    position: absolute;
+    height: 100%;
     width: 100%;
-    height: 400px;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  } */
+#map {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+.primary-overlay{
+    background: rgba(252, 211, 211, 0.1);
+    position: relative;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+} 
+
+ .scroll-icon {
+    position:absolute;
+    bottom:5%;
+    left:47%;
+    opacity:0.5;  
+}
+.talk{
+    height:400px !important;   
+}
+.box{
+    padding:40px 10px !important;
+    text-align: center;
+}
+
+.box h4{
+    padding-bottom:30px;
+}
+
+.section-boxes .row{
+    margin-bottom:0px !important;
+}
+.showcase .card{
+    opacity: 0.8;
+    z-index: 2;
+}
+.showcase .welcome {
+    z-index: 2;
+}
+.showcase{
+    padding: 15px;
+}
+.welcome-text{
+    font-size: 2.7rem;
+}
+@media (max-width: 600px) {
+    .section-showcase{
+        height: 50vh;
+    }
+}
+.nav-container{
+    margin-left: 5%;
+    margin-right: 5%;
 }

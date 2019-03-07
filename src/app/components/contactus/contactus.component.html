@@ -1,0 +1,63 @@
+<section id="contactus" class="section section-contact light-green lighten-5 center scrollspy">
+  <div class="container">
+    <div id="map">
+    </div>
+    <!-- <h2>{{ title }}</h2>
+      <agm-map [latitude]="lat" [longitude]="lng">
+        <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="{
+          url: '../../../assets/images/2012 Mercedes Benz Atego Box Lorry 2.JPG',
+          scaledSize: {
+              width: 20,
+              height: 30
+          }
+      }"></agm-marker>
+      </agm-map> -->
+  </div>
+
+  <div class="row">
+    <div class="col s12 m4 offset-m8">
+      <div class="card-panel contactform z-depth-5 ">
+        <form method="post" [formGroup]="contactusForm">
+          <div class="materialert success" role="alert" *ngIf="error.show == true">
+            <div class="material-icons">check</div>
+            {{error.msg}}
+          </div>
+          <span class="card-title">Contact Us</span>
+          <div class="divder"></div>
+          <div class="input-field">
+            <input type="text" placeholder="Name" formControlName="name_contact" #name_contact>
+            <label for="name">Name</label>
+            <small class="red-text" *ngIf="name_contact.errors?.required && name_contact.touched">Your Name will help us
+              serve you better</small>
+          </div>
+          <div class="input-field">
+            <input type="email" placeholder="Email" formControlName="email_contact">
+            <label for="email">Email</label>
+            <small *ngIf="email_contact.errors?.required && email_contact.touched" class="red-text">Customer's Email is required</small>
+            <small *ngIf="email_contact.errors?.email_contact && email_contact.touched" class="red-text">Please provide a
+              valid Email Address</small>
+          </div>
+          <div class="input-field">
+            <input type="text" placeholder="Phone Number" formControlName="phone_contact">
+            <label for="phone">Phone</label>
+            <small *ngIf="phone_contact.errors?.required && phone_contact.touched" class="red-text">Customer's phone number
+              is required</small>
+            <small *ngIf="phone_contact.errors?.phone_contact && phone_contact.touched" class="red-text">Please provide a
+              valid phone number</small>
+          </div>
+          <div class="input-field">
+            <textarea class="materialize-textarea" placeholder="Message" formControlName="message_contact"></textarea>
+            <label for="message">Message</label>
+            <small *ngIf="message_contact.errors?.required && message_contact.touched" class="red-text">Customer's message
+              and feedback is essential</small>
+            <small *ngIf="message_contact.errors?.message_contact && message_contact.touched" class="red-text">Please say something</small>
+
+          </div>
+          <button (click)="submitContactUs()" type="button" class="btn btn-rounded black white-text" [disabled]="!contactusForm.valid">
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
